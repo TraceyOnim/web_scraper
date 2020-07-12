@@ -1,21 +1,6 @@
 # Smoothixir
+ 
+ In this simple example we are going to build a web scraper to get a list of delicious smoothies from https://www.allrecipes.com.
 
-**TODO: Add description**
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `smoothixir` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:smoothixir, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/smoothixir](https://hexdocs.pm/smoothixir).
+ This project is referenced from [blog](https://medium.com/@Julien_Corb/web-scraping-with-elixir-using-httpoison-and-floki-26ebaa03b076)
 
