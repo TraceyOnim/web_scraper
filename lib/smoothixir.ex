@@ -3,16 +3,25 @@ defmodule Smoothixir do
   Documentation for `Smoothixir`.
   """
 
-  @doc """
-  Hello world.
+  def smoothies_url do
+    case _url() |> HTTPoison.get() do
+      {:ok, %HTTPoison.Response{body: body, status_code: 200}} ->
+        urls =
+          body
+          |> Floki.find("a.fixed-recipe-card__title-link")
+          |> Floki.attribute("href")
 
-  ## Examples
+        {:ok, urls}
 
-      iex> Smoothixir.hello()
-      :world
+      {:ok, _response} ->
+        IO.puts("Not found")
 
-  """
-  def hello do
-    :world
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        IO.inspect(reason)
+    end
+  end
+
+  defp _url do
+    "https://www.allrecipes.com/recipes/138/drinks/smoothies/?internalSource=hubcard&referringContentType=Search&clickId=cardslot%201"
   end
 end
